@@ -127,5 +127,5 @@ function MainLoop() {
 	grafx.drawImage(spritesheet,spritesheet.srcX,spritesheet.srcY,spritesheet.width,spritesheet.height,Player.X,Player.Y,spritesheet.width,spritesheet.height);
 	grafx.drawImage(block.Sprite,block.X,block.Y);
 	requestAnimationFrame(MainLoop);
-	}
+}
 
