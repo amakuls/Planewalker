@@ -9,11 +9,9 @@ spritesheet.srcY = 0;
 spritesheet.width = 43;
 spritesheet.height = 58;
 
-function player(img,x,y,width,height) {
+function player(img,width,height) {
 	this.Sprite = new Image();
 	this.Sprite.src = img;
-	this.X = x;
-	this.Y = y;
 	this.Width = width;
 	this.Height = height;
 	this.Previous_X;
@@ -27,15 +25,26 @@ function obstacle(img,x,y,width,height) {
 	this.Sprite = new Image();
 	this.Sprite.src = img;
 	this.X = x;
-    this.Y = y;
-    this.c = 0;
-    this.Width = width;
-    this.Height = height;
-    this.s = 0;
+		this.Y = y;
+		this.c = 0;
+		this.Width = width;
+		this.Height = height;
+		this.s = 0;
 }
 
-var Player = new player("assets/images/player.png",100,100,60,82);
+var Player = new player("assets/images/player.png",60,82);
 var block = new obstacle("assets/images/block.jpg",0,0,100,100);
+$.get("/playerstats", function(data) {
+			console.log(data.y);
+			Player.Y = data.y;
+		}
+		);
+$.get("/playerstats", function(data) {
+			console.log(data.x);
+			Player.X = data.x;
+			grafx.drawImage(spritesheet,spritesheet.srcX,spritesheet.srcY,spritesheet.width,spritesheet.height,Player.X,Player.Y,spritesheet.width,spritesheet.height);
+		}
+		);
 
 var isLeft = false;
 var isRight = false;
@@ -55,12 +64,17 @@ function keyUp(e) {
 	if (String.fromCharCode(e.keyCode)==="(") isDown = false;
 }
 
-
+$(document).on("onunload",function(){
+	$.post("/playerstats", {x:Player.X,y:Player.Y},function(data) {
+			console.log(data);
+		}
+		);
+});
 
 MainLoop ();
 function MainLoop() {
-	gameCanvas.width = 0.95*window.innerWidth;
-	gameCanvas.height = window.innerHeight - 0.05*window.innerWidth;
+	gameCanvas.width =  window.innerWidth;
+	gameCanvas.height =  window.innerHeight;
 	if ( Player.X + Player.Width > Player.X && Player.X < block.X + block.Width && Player.Y < block.Y + block.Height && Player.Y + Player.Height > block.Y) {
 		block.c = 1;   //player is currently colliding with block
 	}
@@ -96,10 +110,10 @@ function MainLoop() {
 		}
 	}
 
-	if (isUp) {Player.Velocity_Y = -2;Player.side=2;}
-	if (isDown) {Player.Velocity_Y = 2;Player.side=1;}
-	if (isLeft) {Player.Velocity_X = -2;Player.side=3;}
-	if (isRight) {Player.Velocity_X = 2;Player.side=4;}
+	if (isUp) {Player.Velocity_Y = -2.25;Player.side=2;}
+	if (isDown) {Player.Velocity_Y = 2.25;Player.side=1;}
+	if (isLeft) {Player.Velocity_X = -2.25;Player.side=3;}
+	if (isRight) {Player.Velocity_X = 2.25;Player.side=4;}
 	if (!isLeft && !isRight) Player.Velocity_X = 0;
 	if (!isUp && !isDown) Player.Velocity_Y = 0;
 
