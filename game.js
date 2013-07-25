@@ -36,12 +36,12 @@ var Player = new player("assets/images/player.png",60,82);
 var block = new obstacle("assets/images/block.jpg",0,0,100,100);
 $.get("/playerstats", function(data) {
 			console.log(data.y);
-			Player.Y = data.y;
+			Player.Y = parseFloat(data.y);
 		}
 		);
 $.get("/playerstats", function(data) {
 			console.log(data.x);
-			Player.X = data.x;
+			Player.X = parseFloat(data.x);
 			grafx.drawImage(spritesheet,spritesheet.srcX,spritesheet.srcY,spritesheet.width,spritesheet.height,Player.X,Player.Y,spritesheet.width,spritesheet.height);
 		}
 		);
@@ -64,13 +64,18 @@ function keyUp(e) {
 	if (String.fromCharCode(e.keyCode)==="(") isDown = false;
 }
 
-$(document).on("onunload",function(){
+window.onunload = function(){
 	$.post("/playerstats", {x:Player.X,y:Player.Y},function(data) {
 			console.log(data);
 		}
 		);
-});
-
+};
+window.onbeforeunload = function(){
+	$.post("/playerstats", {x:Player.X,y:Player.Y},function(data) {
+			console.log(data);
+		}
+		);
+};
 MainLoop ();
 function MainLoop() {
 	gameCanvas.width =  window.innerWidth;
