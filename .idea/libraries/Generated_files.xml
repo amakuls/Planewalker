@@ -8,7 +8,7 @@
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/server.js" />
-      <root url="file://$PROJECT_DIR$/Assets/game.js" />
+      <root url="file://$PROJECT_DIR$/Assets/Game.js" />
     </CLASSES>
     <SOURCES />
   </library>
