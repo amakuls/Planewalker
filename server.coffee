@@ -17,7 +17,7 @@ playerstats.y = 100
 playerstats.s = 1
 
 app.post('/playerstats', (req, res) ->
-  playerstats = req.body
+  playerstats = areq.body
 )
 
 app.get('/playerstats', (req, res) ->

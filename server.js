@@ -21,7 +21,7 @@
   playerstats.s = 1;
 
   app.post('/playerstats', function(req, res) {
-    return playerstats = req.body;
+    return playerstats = areq.body;
   });
 
   app.get('/playerstats', function(req, res) {

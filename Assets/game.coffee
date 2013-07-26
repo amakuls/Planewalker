@@ -1,6 +1,5 @@
 gameCanvas = document.getElementById("game")
 grafx = gameCanvas.getContext('2d')
-
 class Player
   constructor:  ->
     @width = 0
@@ -15,6 +14,7 @@ class Player
 spriteFrames = {}
 player = new Player()
 spritesheet = new Image()
+currentFrame = "0001"
 
 $.get("/PCSprite.json", (data) ->
   spritesheetinfo = data
@@ -22,7 +22,7 @@ $.get("/PCSprite.json", (data) ->
   spritesheet.width = spritesheetinfo.meta.w
   spritesheet.height = spritesheetinfo.meta.h
   spriteFrames = spritesheetinfo.frames
-  player.sprite = spriteFrames["PCLeft-Idle0001.png"]
+  player.sprite = spriteFrames["PCLeft-Idle#{currentFrame}.png"]
   player.height = player.sprite.frame.h
   player.width =  player.sprite.frame.w
   $.get("/playerstats", (data) ->
@@ -57,15 +57,29 @@ window.onbeforeunload = ->
 window.onunload = ->
   $.post("/playerstats", {x:player.X,y:player.Y,s:player.side})
 
+currentFrameNum = 0
+currentFrameNum2 =0
+
+currentFrameIncrease = ->
+  currentFrameNum = parseFloat(currentFrame[3])
+  currentFrameNum2 = parseFloat(currentFrame[2])
+  if currentFrameNum is 2
+    currentFrameNum2 = 0
+  if currentFrameNum < 9
+    currentFrameNum++
+  else
+    currentFrameNum2 = 1
+    currentFrameNum = 1
+  currentFrame = "00" + String(currentFrameNum2) + String(currentFrameNum)
+
+setInterval(currentFrameIncrease,1000/12)
 MainLoop = ->
   gameCanvas.width =  window.innerWidth
   gameCanvas.height =  window.innerHeight
   if isUp
     player.Velocity_Y = -(player.speed)
-    player.side = 2
   if isDown
     player.Velocity_Y = player.speed
-    player.side = 1
   if isLeft
     player.Velocity_X = -(player.speed)
     player.side = 3
@@ -78,19 +92,10 @@ MainLoop = ->
   player.Velocity_Y = player.diagonalSpeed if isDown and (isRight or isLeft)
   player.Velocity_X = -player.diagonalSpeed if isLeft and (isUp or isDown)
   player.Velocity_X = player.diagonalSpeed if isRight and (isUp or isDown)
-  if player.side is 2
-    spritesheet.srcX = 0
-    spritesheet.srcY = 65
-  if player.side is 1
-    spritesheet.srcX = 46
-    spritesheet.srcY = 0
   if player.side is 3
-    spritesheet.srcX = 3
-    spritesheet.srcY = 4
+    player.sprite = spriteFrames["PCLeft-Idle#{currentFrame}.png"]
   if player.side is 4
-    spritesheet.srcX=46
-    spritesheet.srcY=65
-
+    player.sprite = spriteFrames["PCright#{currentFrame}.png"]
   player.X += player.Velocity_X;
   player.Y += player.Velocity_Y;
 
