@@ -236,7 +236,7 @@ $.get("/PCSprite.json", function(data){
 function animate(){
     Game.currentFrameNum = parseFloat(Game.currentFrame[3]);
     Game.currentFrameNum2 = parseFloat(Game.currentFrame[2]);
-    if (Game.currentFrameNum2 === 5 && Game.currentFrameNum === 2){
+    if (Game.currentFrameNum2 === 1 && Game.currentFrameNum === 5){
         Game.currentFrameNum2 = 0;
         Game.currentFrameNum = 1;
     }
