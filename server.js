@@ -9,7 +9,7 @@
   app.use(express.bodyParser());
 
   app.configure(function() {
-    return app.use("/", express["static"](__dirname));
+    return app.use(express["static"](__dirname + "/Assets"));
   });
 
   playerstats = {};
@@ -18,7 +18,7 @@
 
   playerstats.y = 100;
 
-  player.s = 1;
+  playerstats.s = 1;
 
   app.post('/playerstats', function(req, res) {
     return playerstats = req.body;

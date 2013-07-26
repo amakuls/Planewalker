@@ -1,30 +1,36 @@
 gameCanvas = document.getElementById("game")
 grafx = gameCanvas.getContext('2d')
-spritesheet = new Image()
-spritesheet.src = "assets/images/spritesheet-1.png"
-spritesheet.srcX = 48
-spritesheet.srcY = 0
-spritesheet.width = 43
-spritesheet.height = 58
+
 class Player
-  constructor: (img,width,height) ->
-    @Sprite = new Image()
-    @Sprite.src = img
-    @width = width
-    @height = height
+  constructor:  ->
+    @width = 0
+    @height = 0
     @Previous_X = 0
     @Previous_Y = 0
     @Velocity_X = 0
     @Velocity_Y = 0
     @speed = 2.5
+    @diagonalSpeed = (Math.sqrt(@speed*@speed*2))/2
 
-player = new Player("assets/images/player.png",60,82)
+spriteFrames = {}
+player = new Player()
+spritesheet = new Image()
 
-$.get("/playerstats", (data) ->
-  player.side = parseFloat(data.s)
-  player.Y = parseFloat(data.y)
-  player.X = parseFloat(data.x)
-  grafx.drawImage(spritesheet,spritesheet.srcX,spritesheet.srcY,spritesheet.width,spritesheet.height,player.X,player.Y,spritesheet.width,spritesheet.height)
+$.get("/PCSprite.json", (data) ->
+  spritesheetinfo = data
+  spritesheet.src = "Images/PCSprite.png"
+  spritesheet.width = spritesheetinfo.meta.w
+  spritesheet.height = spritesheetinfo.meta.h
+  spriteFrames = spritesheetinfo.frames
+  player.sprite = spriteFrames["PCLeft-Idle0001.png"]
+  player.height = player.sprite.frame.h
+  player.width =  player.sprite.frame.w
+  $.get("/playerstats", (data) ->
+    player.side = parseFloat(data.s)
+    player.Y = parseFloat(data.y)
+    player.X = parseFloat(data.x)
+    MainLoop()
+  )
 )
 
 isLeft = false
@@ -68,10 +74,10 @@ MainLoop = ->
     player.side = 4
   player.Velocity_X = 0 if not isLeft and not isRight
   player.Velocity_Y = 0 if not isUp and not isDown
-  player.Velocity_Y = -(Math.sqrt(player.speed*player.speed*2))/2 if isUp and (isRight or isLeft)
-  player.Velocity_Y = (Math.sqrt(player.speed*player.speed*2))/2 if isDown and (isRight or isLeft)
-  player.Velocity_X = -(Math.sqrt(player.speed*player.speed*2))/2 if isLeft and (isUp or isDown)
-  player.Velocity_X = (Math.sqrt(player.speed*player.speed*2))/2 if isRight and (isUp or isDown)
+  player.Velocity_Y = -player.diagonalSpeed if isUp and (isRight or isLeft)
+  player.Velocity_Y = player.diagonalSpeed if isDown and (isRight or isLeft)
+  player.Velocity_X = -player.diagonalSpeed if isLeft and (isUp or isDown)
+  player.Velocity_X = player.diagonalSpeed if isRight and (isUp or isDown)
   if player.side is 2
     spritesheet.srcX = 0
     spritesheet.srcY = 65
@@ -89,7 +95,6 @@ MainLoop = ->
   player.Y += player.Velocity_Y;
 
   grafx.clearRect(0,0,gameCanvas.width,gameCanvas.height)
-  grafx.drawImage(spritesheet,spritesheet.srcX,spritesheet.srcY,spritesheet.width,spritesheet.height,player.X,player.Y,spritesheet.width,spritesheet.height)
+  grafx.drawImage(spritesheet,player.sprite.frame.x,player.sprite.frame.y,player.width,player.height,player.X,player.Y,player.width,player.height)
   requestAnimationFrame(MainLoop)
 
-MainLoop()

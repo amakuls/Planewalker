@@ -2,25 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dab4c7a2-04b6-4134-81b5-ecc16d61a370" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/Planewalker.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/game.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/game.js" afterPath="$PROJECT_DIR$/game.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/index.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/game.coffee" afterPath="$PROJECT_DIR$/Assets/game.coffee" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/game.js" afterPath="$PROJECT_DIR$/Assets/game.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/jquery-2.0.3.min.js" afterPath="$PROJECT_DIR$/Assets/jquery-2.0.3.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/game.map" afterPath="$PROJECT_DIR$/game.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.coffee" afterPath="$PROJECT_DIR$/server.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.map" afterPath="$PROJECT_DIR$/server.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Planewalker.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="dab4c7a2-04b6-4134-81b5-ecc16d61a370" time="1374772482770" ignored="false" />
-    <file path="/game.coffee" changelist="dab4c7a2-04b6-4134-81b5-ecc16d61a370" time="1374792463364" ignored="false" />
-    <file path="/server.coffee" changelist="dab4c7a2-04b6-4134-81b5-ecc16d61a370" time="1374792482009" ignored="false" />
+    <file path="/game.coffee" changelist="dab4c7a2-04b6-4134-81b5-ecc16d61a370" time="1374801975814" ignored="false" />
+    <file path="/server.coffee" changelist="dab4c7a2-04b6-4134-81b5-ecc16d61a370" time="1374796697583" ignored="false" />
+    <file path="/index.html" changelist="dab4c7a2-04b6-4134-81b5-ecc16d61a370" time="1374796266551" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,19 +39,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="game.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game.coffee">
+      <file leaf-file-name="game.coffee" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/game.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="52" selection-start="537" selection-end="537" vertical-scroll-proportion="-12.0">
+            <state line="26" column="39" selection-start="727" selection-end="727" vertical-scroll-proportion="0.5502392">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.coffee" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PCSprite.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/PCSprite.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="218" column="35" selection-start="5206" selection-end="5206" vertical-scroll-proportion="-32.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="28" selection-start="29" selection-end="29" vertical-scroll-proportion="0.02255639">
+            <state line="0" column="53" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="36" selection-start="52" selection-end="52" vertical-scroll-proportion="-2.5">
               <folding />
             </state>
           </provider>
@@ -76,10 +93,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/game.js" />
         <option value="$PROJECT_DIR$/game.coffee" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/server.coffee" />
+        <option value="$PROJECT_DIR$/Assets/game.coffee" />
       </list>
     </option>
   </component>
@@ -133,6 +151,56 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Planewalker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Planewalker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Planewalker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Planewalker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game.coffee" />
+              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Planewalker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Planewalker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -144,6 +212,11 @@
     <property name="options.lastSelected" value="fileColors" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Assets" />
+    </key>
   </component>
   <component name="RunManager">
     <list size="0" />
@@ -249,14 +322,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="6" selection-start="99" selection-end="99" vertical-scroll-proportion="-5.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game.js">
+    <entry file="file://$PROJECT_DIR$/Assets/game.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="116" column="45" selection-start="2454" selection-end="2454" vertical-scroll-proportion="0.0">
           <folding />
@@ -270,16 +336,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game.coffee">
+    <entry file="file://$PROJECT_DIR$/Assets/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="52" selection-start="537" selection-end="537" vertical-scroll-proportion="-12.0">
+        <state line="4" column="36" selection-start="52" selection-end="52" vertical-scroll-proportion="-2.5">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="28" selection-start="29" selection-end="29" vertical-scroll-proportion="0.02255639">
+        <state line="0" column="53" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/PCSprite.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="218" column="35" selection-start="5206" selection-end="5206" vertical-scroll-proportion="-32.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/game.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="39" selection-start="727" selection-end="727" vertical-scroll-proportion="0.5502392">
           <folding />
         </state>
       </provider>
